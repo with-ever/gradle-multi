@@ -1,0 +1,14 @@
+//=================================================================//
+// gradle-multi-web
+//=================================================================//
+apply plugin: 'war'
+
+dependencies {
+	compile project(':gradle-multi-core')
+
+	providedCompile 'javax.servlet:javax.servlet-api:4.0.0'
+	compile 'javax.servlet:jstl:1.2'
+	compile('org.springframework.boot:spring-boot-starter-web')
+	//compile('org.springframework.boot:spring-boot-starter-security')		
+	compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+}

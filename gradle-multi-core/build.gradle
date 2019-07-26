@@ -1,0 +1,17 @@
+//=================================================================//
+// gradle-multi-core
+//=================================================================//
+
+bootJar{
+    enabled = false;
+}
+jar {
+    enabled = true;
+}
+
+dependencies {	
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile ('mysql:mysql-connector-java:8.0.13')
+	compile ('com.zaxxer:HikariCP:3.2.0')
+}

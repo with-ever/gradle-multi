@@ -1,0 +1,9 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'gradle-multi'
+include 'gradle-multi-core'
+include 'gradle-multi-app'
+include 'gradle-multi-web'
