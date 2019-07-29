@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.withever.model.User;
-import com.withever.web.user.service.UserService;
+import com.withever.web.user.service.PostService;
 
 /**
  * @author FIC04901
  *
  */
 @Controller
-@RequestMapping(value="/user")
-public class UserController {
+@RequestMapping(value="/post")
+public class PostController {
 	@Autowired
-	private UserService userService;
+	private PostService postService;
 	
 	
 	@RequestMapping(value="/save",  method=RequestMethod.GET)
