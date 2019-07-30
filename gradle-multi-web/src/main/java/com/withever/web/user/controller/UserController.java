@@ -1,4 +1,4 @@
-package com.withever.web.user.control;
+package com.withever.web.user.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.withever.model.User;
-import com.withever.web.user.service.PostService;
+import com.withever.web.user.service.UserService;
 
 /**
  * @author FIC04901
  *
  */
 @Controller
-@RequestMapping(value="/post")
-public class PostController {
+@RequestMapping(value="/user")
+public class UserController {
 	@Autowired
-	private PostService postService;
+	private UserService userService;
 	
 	
 	@RequestMapping(value="/save",  method=RequestMethod.GET)

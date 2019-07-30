@@ -1,0 +1,48 @@
+CREATE TABLE wever.post (
+       post_seq int NOT NULL int auto_increment,
+       board_type_code VARCHAR(32) NOT NULL,
+       title VARCHAR(50),
+       content longtext,
+       view_cnt numeric default 0,
+       like_cnt numeric default 0,
+       reg_date datetime default current_timestamp,
+       mod_date datetime,
+       reg_id varchar(20),
+       reg_nm varchar(20),
+       mod_id varchar(20),
+       mod_nm varchar(20),
+       image_url varchar(100),
+       PRIMARY KEY (post_seq)
+    );
+    
+    
+    INSERT INTO `wever`.`post`
+(`post_seq`,
+`board_type_code`,
+`title`,
+`content`,
+`view_cnt`,
+`like_cnt`,
+`reg_date`,
+`mod_date`,
+`reg_id`,
+`reg_nm`,
+`mod_id`,
+`mod_nm`,
+`image_url`)
+VALUES
+(1,
+'0000001',
+'테스트1',
+'라라라라라랄라라라라라',
+0,
+0,
+current_time(),
+current_time(),
+'jsg',
+'주상곤',
+'jsg',
+'주상곤',
+'image.com');
+
+    
