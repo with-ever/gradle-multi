@@ -19,8 +19,8 @@ public class Post {
 	@Column(name = "post_seq", nullable = false)
     private int  postSeq;
     
-    @Column(name = "board_type_code", nullable = false)
-    private String boardTypeCode;
+    @Column(name = "board_id", nullable = false)
+    private String boardId;
 
     @Column(name = "title", nullable = false)
     private String title;

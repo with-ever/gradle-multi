@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>게시판 페이지</title>
+    <title>POST</title>
     <!-- css 가져오기 -->
     <link rel="stylesheet" type="text/css" href="/resources/semantic.min.css">
 
@@ -37,24 +37,33 @@
     <div class="ui middle aligned center aligned grid">
         <div class="column">
             <h2 class="ui teal image header">
-                게시판 페이지
+                POST
             </h2>
+            <div id="controllArea" style="float:right;">
+	            <input type ="button" id="btn_list" class="ui fluid small teal button" value="List"/>
+	            <input type ="button" id="btn_bookmark" class="ui fluid small teal button" value="BookMark"/>
+            </div>
             <div class="ui large form">
                 <div class="ui stacked segment">
-                   <input type ="button" id="btn_write" class="ui fluid large teal button" value="게시글 쓰기"/>
+                   <input type ="button" id="btn_write" class="ui fluid large teal button" value="WIRTE"/>
                    <div id="writeArea" class="ui middle aligned center aligned" style="width:100%; display:none;">
-			            <form class="ui large form">
+			            <form class="ui large form" id="writeForm">
 			                <div class="ui stacked segment">
 			                    <div class="field">
-			                        <input type="text" id="b_title" placeholder="게시글 제목" autocomplete="off" autofocus="autofocus">
+			                        <input type="text" id="title" name="title" placeholder="post title" autocomplete="off" autofocus="autofocus">
 			                    </div>
 			                    <div class="field">
 			                        <div class="ui left icon input">
-			                            <textarea style="resize: vertical;" id="b_content" placeholder="게시글 내용" rows="8"></textarea>
+			                            <textarea style="resize: vertical;" name="content" id="content" placeholder="post contents" rows="8"></textarea>
 			                        </div>
 			                    </div>
-			                    <div class="ui fluid large teal submit button" id="write_bbs">저장</div>
+			                    <div class="ui fluid large teal submit button" id="btn_save">save</div>
 			                </div>
+							<!-- Hidden Section -->
+							<input type="hidden" name="regId" id="regId" value="jsg"/>
+							<input type="hidden" name="regNm" id="regNm" value="주상곤"/>
+							<input type="hidden" name="boardId" id="boardId" value="00001"/>
+							<!-- Hidden Section -->
 			            </form>
 		            </div>
                    <table class="ui celled table">
@@ -103,8 +112,14 @@
 		$('#btn_write').click(function(){
 		    //$('#writeArea').attr('style','display:block');
 		    $('#writeArea').toggle();
-		  });
-	
+	  	});
+
+		$('#btn_save').click(function(){
+			$( "#writeForm" ).attr('method','POST');
+			$( "#writeForm" ).attr('action','/post/save');
+			$( "#writeForm" ).submit();
+	  	});
+			
 	});
 
     </script>
